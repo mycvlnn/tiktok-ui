@@ -1,10 +1,7 @@
-import './App.css';
-import Button from '@/components/Button';
-
 function App() {
     return (
         <div className="App">
-            <Button />
+            <h1>learn react </h1>
         </div>
     );
 }
