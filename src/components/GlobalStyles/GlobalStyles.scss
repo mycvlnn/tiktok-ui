@@ -3,6 +3,8 @@
 
 :root {
     --primary: #fe2c55;
+    --black: #000;
+    --text-color: #333;
 
     //Default layout
     --height-header: 60px;
@@ -25,4 +27,21 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+    color: var(--text-color);
+}
+
+// Tất cả những thẻ html nào có tabindex => bỏ outline và border của nó đi.
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+button {
+    cursor: pointer;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
 }
