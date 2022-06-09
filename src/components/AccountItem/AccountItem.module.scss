@@ -1,0 +1,36 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    object-fit: contain;
+    margin-right: 12px;
+}
+
+.info {
+    flex: 1;
+}
+
+.name {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.check-icon {
+    font-size: 1.4rem;
+    color: rgb(32, 213, 236);
+    margin-left: 4px;
+}
+
+.username {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: var(--sub-text-color);
+}
