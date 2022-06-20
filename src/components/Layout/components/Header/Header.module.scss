@@ -10,6 +10,7 @@
 .inner {
     height: 100%;
     width: var(--width-layout);
+    padding: 0px var(--default-layout-horizontal-spacer);
     display: flex;
     align-items: center;
     justify-content: space-between;
