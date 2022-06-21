@@ -11,6 +11,7 @@ import { Wrapper as PopperWrapper } from '@/components/Popper';
 import AccountItem from '@/components/AccountItem';
 import { SearchIcon } from '@/assets/icons';
 import { useEffect } from 'react';
+import { useDebouce } from '@/hooks';
 
 const cx = classNames.bind(styles);
 
@@ -21,6 +22,8 @@ const Search = () => {
     const [loading, setLoading] = useState(false);
 
     const inputRef = useRef();
+
+    const searchDebounced = useDebouce(searchValue, 500);
 
     const handleHideResult = () => {
         setShowResult(false);
@@ -33,14 +36,14 @@ const Search = () => {
     };
 
     useEffect(() => {
-        if (!searchValue.trim()) {
+        if (!searchDebounced.trim()) {
             setSearchResult([]);
             return;
         }
 
         setLoading(true);
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchDebounced)}&type=less`)
             .then((res) => res.json())
             .then((res) => {
                 setSearchResult(res.data);
@@ -49,7 +52,7 @@ const Search = () => {
             .finally(() => {
                 setLoading(false);
             });
-    }, [searchValue]);
+    }, [searchDebounced]);
 
     return (
         <HeadlessTippy
