@@ -37,7 +37,6 @@ const Menu = ({ children, items = [], onChange = defaultFn }) => {
 
     return (
         <Tippy
-            visible
             arrow
             interactive
             placement="bottom-end"
