@@ -6,6 +6,7 @@
     --white: #fff;
     --text-color: #161823;
     --sub-text-color: rgba(22, 24, 35, 0.5);
+    --font-family: 'ProximaNova', sans-serif;
 
     //Default layout
     --height-header: 60px;
@@ -25,7 +26,7 @@ html {
 }
 
 body {
-    font-family: 'ProximaNova', sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
@@ -41,7 +42,7 @@ input,
 }
 button {
     cursor: pointer;
-    font-family: 'ProximaNova', sans-serif;
+    font-family: var(--font-family);
 }
 
 a[href] {

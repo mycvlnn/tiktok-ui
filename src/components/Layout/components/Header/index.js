@@ -13,17 +13,19 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import Tippy from '@tippyjs/react';
-
+import { Link } from 'react-router-dom';
+import 'tippy.js/dist/tippy.css';
 import classNames from 'classnames/bind';
+
 import styles from './Header.module.scss';
 import images from '@/assets/images';
 
 import Button from '@/components/Button';
 import Menu from '@/components/Popper/Menu';
-import 'tippy.js/dist/tippy.css';
 import { InboxIcon, MessageIcon, UploadIcon } from '@/assets/icons';
 import Image from '@/components/Image';
 import Search from '../Search';
+import routesConfig from '@/config/routes';
 
 const cx = classNames.bind(styles);
 
@@ -99,9 +101,9 @@ const Header = () => {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div>
+                <Link to={routesConfig.home}>
                     <img src={images.logo} alt="tiktok" />
-                </div>
+                </Link>
                 <Search />
                 <div className={cx('actions')}>
                     {currentUser ? (

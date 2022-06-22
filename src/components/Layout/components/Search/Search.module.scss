@@ -17,7 +17,8 @@
         color: var(--black);
         font-size: 1.6rem;
         background-color: transparent;
-        caret-color: var(--primary);
+        caret-color: var(--primary); // con trỏ chuột nhấp nháy trong ô input
+        font-family: var(--font-family);
     }
 
     input:not(:placeholder-shown) ~ .search-btn {
