@@ -1,5 +1,7 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import classNames from 'classnames/bind';
+import styles from './Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faEllipsisVertical,
@@ -11,21 +13,16 @@ import {
     faGear,
     faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
-
 import Tippy from '@tippyjs/react';
-import { Link } from 'react-router-dom';
 import 'tippy.js/dist/tippy.css';
-import classNames from 'classnames/bind';
 
-import styles from './Header.module.scss';
 import images from '@/assets/images';
-
 import Button from '@/components/Button';
 import Menu from '@/components/Popper/Menu';
 import { InboxIcon, MessageIcon, UploadIcon } from '@/assets/icons';
 import Image from '@/components/Image';
 import Search from '../Search';
-import routesConfig from '@/config/routes';
+import { path } from '@/config';
 
 const cx = classNames.bind(styles);
 
@@ -101,7 +98,7 @@ const Header = () => {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home}>
+                <Link to={path.home}>
                     <img src={images.logo} alt="tiktok" />
                 </Link>
                 <Search />
@@ -146,4 +143,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default React.memo(Header);

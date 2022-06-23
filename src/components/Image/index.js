@@ -32,4 +32,4 @@ Image.propTypes = {
     fallback: PropTypes.string,
 };
 
-export default Image;
+export default React.memo(Image);

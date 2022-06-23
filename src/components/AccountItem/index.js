@@ -29,4 +29,4 @@ AccountItem.propTypes = {
     data: PropTypes.object.isRequired,
 };
 
-export default React.memo(AccountItem);
+export default AccountItem;

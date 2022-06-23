@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const InboxIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
+const InboxIcon = ({ size = '3.2rem', className }) => (
     <svg
         className={className}
-        width={width}
-        height={height}
+        width={size}
+        height={size}
         viewBox="0 0 32 32"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -16,5 +17,9 @@ const InboxIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
         ></path>
     </svg>
 );
+
+InboxIcon.propTypes = {
+    size: PropTypes.string,
+};
 
 export default React.memo(InboxIcon);

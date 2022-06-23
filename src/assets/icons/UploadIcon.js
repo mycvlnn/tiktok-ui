@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const UploadIcon = ({ width = '3.2rem', height = '3.2rem', className }) => {
+const UploadIcon = ({ size = '3.2rem', className }) => {
     return (
         <svg
             className={className}
-            width={width}
-            height={height}
+            width={size}
+            height={size}
             viewBox="0 0 32 32"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -17,6 +18,10 @@ const UploadIcon = ({ width = '3.2rem', height = '3.2rem', className }) => {
             ></path>
         </svg>
     );
+};
+
+UploadIcon.propTypes = {
+    size: PropTypes.string,
 };
 
 export default React.memo(UploadIcon);

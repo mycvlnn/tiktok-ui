@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const SearchIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
+const SearchIcon = ({ size = '2.4rem', className }) => (
     <svg
         className={className}
-        width={width}
-        height={height}
+        width={size}
+        height={size}
         viewBox="0 0 48 48"
         fill="currentColor" // dùng để kế thừa color của thẻ bên ngoài
         xmlns="http://www.w3.org/2000/svg"
@@ -16,5 +17,9 @@ const SearchIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
         ></path>
     </svg>
 );
+
+SearchIcon.propTypes = {
+    size: PropTypes.string,
+};
 
 export default React.memo(SearchIcon);

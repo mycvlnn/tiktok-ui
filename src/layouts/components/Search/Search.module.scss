@@ -19,6 +19,7 @@
         background-color: transparent;
         caret-color: var(--primary); // con trỏ chuột nhấp nháy trong ô input
         font-family: var(--font-family);
+        padding-right: 40px;
     }
 
     input:not(:placeholder-shown) ~ .search-btn {

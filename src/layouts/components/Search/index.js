@@ -18,7 +18,7 @@ const cx = classNames.bind(styles);
 const Search = () => {
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
-    const [showResult, setShowResult] = useState(true);
+    const [showResult, setShowResult] = useState(false);
     const [loading, setLoading] = useState(false);
 
     const inputRef = useRef();
@@ -57,8 +57,23 @@ const Search = () => {
             setSearchResult(result);
             setLoading(false);
         };
+
         fetchSearchApi();
     }, [searchDebounced]);
+
+    const renderSearchResult = (attrs) => (
+        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+            <PopperWrapper>
+                <h4 className={cx('search-title')}>Accounts</h4>
+                <div className={cx('search-content')}>
+                    {searchResult.map((result) => (
+                        <AccountItem key={result.id} data={result} />
+                    ))}
+                </div>
+                <div className={cx('search-footer')}>View all results for "{searchDebounced}"</div>
+            </PopperWrapper>
+        </div>
+    );
 
     return (
         // Using a wrapper <div> or <span> tag around the reference element solves this by creating a new parentNode context.
@@ -68,19 +83,7 @@ const Search = () => {
                 visible={showResult && searchResult.length > 0}
                 placement="bottom"
                 onClickOutside={handleHideResult}
-                render={(attrs) => (
-                    <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                        <PopperWrapper>
-                            <h4 className={cx('search-title')}>Accounts</h4>
-                            <div className={cx('search-content')}>
-                                {searchResult.map((result) => (
-                                    <AccountItem key={result.id} data={result} />
-                                ))}
-                            </div>
-                            <div className={cx('search-footer')}>View all results for "{searchDebounced}"</div>
-                        </PopperWrapper>
-                    </div>
-                )}
+                render={renderSearchResult}
             >
                 <div className={cx('search')}>
                     <input

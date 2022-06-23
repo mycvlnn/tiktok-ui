@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const MessageIcon = ({ width = '2.6rem', height = '2.6rem', className }) => (
+const MessageIcon = ({ size = '2.6rem', className }) => (
     <svg
         className={className}
-        width={width}
-        height={height}
+        width={size}
+        height={size}
         viewBox="0 0 48 48"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -16,5 +17,9 @@ const MessageIcon = ({ width = '2.6rem', height = '2.6rem', className }) => (
         ></path>
     </svg>
 );
+
+MessageIcon.propTypes = {
+    size: PropTypes.string.isRequired,
+};
 
 export default React.memo(MessageIcon);
