@@ -3,6 +3,7 @@ import classnames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 import styles from './AccountItem.module.scss';
 import Image from '../Image';
@@ -22,6 +23,10 @@ const AccountItem = ({ data }) => {
             </div>
         </Link>
     );
+};
+
+AccountItem.propTypes = {
+    data: PropTypes.object.isRequired,
 };
 
 export default React.memo(AccountItem);

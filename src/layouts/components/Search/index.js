@@ -77,13 +77,14 @@ const Search = () => {
                                     <AccountItem key={result.id} data={result} />
                                 ))}
                             </div>
-                            <div className={cx('search-footer')}>View all results for "fa"</div>
+                            <div className={cx('search-footer')}>View all results for "{searchDebounced}"</div>
                         </PopperWrapper>
                     </div>
                 )}
             >
                 <div className={cx('search')}>
                     <input
+                        ref={inputRef}
                         type="text"
                         placeholder="Search accounts and videos"
                         spellCheck={false}

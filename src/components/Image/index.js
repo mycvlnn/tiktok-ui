@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 import images from '@/assets/images';
 import styles from './Image.module.scss';
 
 // component dùng để thay thế thẻ img. đã cover trường hợp hợp missing img
-const Image = ({ src, alt, className, fallback: customFallback = images.missingImg, ...props }, ref) => {
+const Image = forwardRef(({ src, alt, className, fallback: customFallback = images.missingImg, ...props }, ref) => {
     const [fallback, setFallback] = useState('');
 
     const handleError = () => {
@@ -22,6 +23,13 @@ const Image = ({ src, alt, className, fallback: customFallback = images.missingI
             onError={handleError}
         />
     );
+});
+
+Image.propTypes = {
+    src: PropTypes.string,
+    alt: PropTypes.string,
+    className: PropTypes.string,
+    fallback: PropTypes.string,
 };
 
-export default React.forwardRef(Image);
+export default Image;

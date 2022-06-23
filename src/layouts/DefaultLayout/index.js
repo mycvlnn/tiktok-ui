@@ -1,8 +1,8 @@
+import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
+
 import Header from '../components/Header';
 import Sidebar from './Sidebar';
-
-import classNames from 'classnames/bind';
-
 import styles from './DefaultLayout.module.scss';
 const cx = classNames.bind(styles);
 
@@ -17,5 +17,9 @@ function DefaultLayout({ children }) {
         </div>
     );
 }
+
+DefaultLayout.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
 export default DefaultLayout;

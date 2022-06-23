@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames/bind';
+import PropTypes from 'prop-types';
 
 import styles from './Button.module.scss';
 
@@ -70,6 +71,24 @@ const Button = ({
             {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
         </Component>
     );
+};
+
+Button.propTypes = {
+    to: PropTypes.string,
+    href: PropTypes.string,
+    primary: PropTypes.bool,
+    secondary: PropTypes.bool,
+    outlined: PropTypes.bool,
+    text: PropTypes.bool,
+    rounded: PropTypes.bool,
+    disabled: PropTypes.bool,
+    small: PropTypes.bool,
+    large: PropTypes.bool,
+    className: PropTypes.string,
+    leftIcon: PropTypes.node,
+    rightIcon: PropTypes.node,
+    onClick: PropTypes.func,
+    children: PropTypes.node.isRequired,
 };
 
 export default React.memo(Button);
