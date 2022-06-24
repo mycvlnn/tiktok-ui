@@ -19,7 +19,7 @@ const MessageIcon = ({ size = '2.6rem', className }) => (
 );
 
 MessageIcon.propTypes = {
-    size: PropTypes.string.isRequired,
+    size: PropTypes.string,
 };
 
 export default React.memo(MessageIcon);

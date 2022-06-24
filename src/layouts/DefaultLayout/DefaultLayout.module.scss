@@ -7,7 +7,7 @@
 .container {
     display: flex;
     width: var(--width-layout);
-    padding: 0px var(--default-layout-horizontal-spacer);
+    max-width: 100%;
     margin-top: var(--height-header);
 }
 

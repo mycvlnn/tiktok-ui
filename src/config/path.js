@@ -4,4 +4,5 @@ export const path = {
     profile: '/@:nickname',
     upload: '/upload',
     search: '/search',
+    live: '/live',
 };
