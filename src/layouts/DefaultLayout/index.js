@@ -1,3 +1,4 @@
+import Notification from '@/components/UI/Notification';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 
@@ -13,6 +14,7 @@ function DefaultLayout({ children }) {
             <div className={cx('container')}>
                 <Sidebar />
                 <div className={cx('content')}>{children}</div>
+                <Notification />
             </div>
         </div>
     );
