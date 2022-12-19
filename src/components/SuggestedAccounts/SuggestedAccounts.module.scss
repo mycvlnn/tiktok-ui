@@ -1,0 +1,67 @@
+.container {
+    padding: 16px 0;
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
+}
+
+.label {
+    font-size: 1.4rem;
+    color: #161823bf;
+    margin-bottom: 8px;
+    padding: 0 8px;
+    font-weight: 600;
+}
+
+.account-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.account-item:hover {
+    background-color: #16182308;
+    border-radius: 8px;
+}
+
+.account-img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.account-info {
+    flex: 1;
+    margin-left: 12px;
+}
+
+.user-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.check {
+    margin-left: 4px;
+    font-size: 14px;
+    color: #20d5ec;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-right: 8px;
+    color: rgba(22, 24, 35, 0.75);
+}
+
+.btn-more {
+    color: #fe2c55;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0 8px;
+    margin-top: 8px;
+}
+
+.preview {
+    width: 320px;
+}

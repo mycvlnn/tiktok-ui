@@ -1,0 +1,58 @@
+.wrapper {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-follow {
+    padding: 8px 12px;
+}
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.body {
+    margin-top: 12px;
+}
+
+.user-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.check {
+    margin-left: 4px;
+    font-size: 14px;
+    color: #20d5ec;
+}
+
+.name {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-right: 8px;
+    color: rgba(22, 24, 35, 0.75);
+}
+
+.footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.user-value {
+    .text {
+        margin-left: 4px;
+    }
+}
+
+.user-value + .user-value {
+    margin-left: 12px;
+}

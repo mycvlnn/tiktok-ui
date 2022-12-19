@@ -13,6 +13,7 @@ import {
     UserGroupIconSolid,
     UserGroupRegular,
 } from '@/assets/icons';
+import SuggestedAccounts from '@/components/SuggestedAccounts';
 
 const cx = classNames.bind(styles);
 
@@ -29,6 +30,8 @@ const Sidebar = () => {
                 />
                 <MenuItem title="LIVE" icon={<LiveIconRegular />} activeIcon={<LiveIconSolid />} to={path.live} />
             </Menu>
+            <SuggestedAccounts label="Suggested accounts" />
+            <SuggestedAccounts label="Following accounts" />
         </aside>
     );
 };
